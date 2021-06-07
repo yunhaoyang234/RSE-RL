@@ -24,25 +24,6 @@ class Sampling(layers.Layer):
         epsilon = tf.keras.backend.random_normal(shape=(batch, dim), mean=0,stddev=0)
         return z_mean + tf.exp(0.5 * z_log_var) * epsilon
 
-def build_encoder(latent_dim, shape):
-    encoder_inputs = keras.Input(shape=shape)
-    regularizer = keras.regularizers.l1_l2(0.01)
-    x = layers.Conv2D(16, 3, activation="relu", strides=1, padding="same", 
-                      kernel_regularizer=regularizer)(encoder_inputs)
-    x = layers.Conv2D(32, 3, activation="relu", strides=2, padding="same",
-                      kernel_regularizer=regularizer)(x)
-    x = layers.Conv2D(64, 3, activation="relu", strides=2, padding="same", 
-                      kernel_regularizer=regularizer)(x)
-    x = layers.Conv2D(72, 3, activation="relu", strides=1, padding="same",
-                      kernel_regularizer=regularizer)(x)
-    x = tf.keras.layers.BatchNormalization()(x)
-    x = layers.Flatten()(x)
-    x = layers.Dense(128, activation="relu")(x)
-
-    z = layers.Dense(latent_dim, name="z")(x)
-    z_sig = layers.Dense(latent_dim, activation='softplus')(x)
-    encoder = keras.Model(encoder_inputs, [z, z_sig], name="encoder")
-    return encoder
 
 def build_decoder(latent_dim, shape):
     latent_inputs = keras.Input(shape=(latent_dim,))
