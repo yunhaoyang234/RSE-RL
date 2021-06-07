@@ -16,7 +16,7 @@ parser.add_argument('--test_files_path', type=str, default='')
 parser.add_argument('--target_psnr', type=float, default=30.0)
 parser.add_argument('--plot', type=bool, default=False)
 
-from model import *
+from models import *
 from evaluation import *
 
 def main(args):
