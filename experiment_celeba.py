@@ -129,7 +129,7 @@ def main(args):
     '''
     Self-Enhancing
     '''
-    from RL import *
+    from sac_environment import *
     TARGET_PSNR = args.target_psnr
 
     for fb in range(0, len(test_files), FILE_BATCH):
