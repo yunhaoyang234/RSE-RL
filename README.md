@@ -1,6 +1,10 @@
 # Recursive Self-Enhancing Reinforcement Learning (RSE-RL)
 Code for reproducing results in **Recursive Self-Improvement for Camera Image and Signal Processing**.
 
+Our RSE-RL model views the identification and correction of artifacts as a recursive self-learning and self-improvement exercise and consists of two major sub-modules: (i) The latent feature sub-space clustering/grouping obtained through an equivariant variational auto-encoder enabling rapid identification of the correspondence and discrepancy between noisy and clean image patches. (ii) The adaptive learned transformation controlled by a trust-region soft actor-critic agent that progressively filters and enhances the noisy patches using its closest feature distance neighbors of clean patches. Artificial artifacts that may be introduced in a patch-based ISP, are also removed through a reward-based de-blocking recovery and image enhancement.  We demonstrate the self-improvement feature of our model by recursively training and testing on images, wherein the enhanced images resulting from each epoch provide a natural data augmentation and robustness to the RSE-RL training-filtering pipeline.
+
+![atchetecture](https://github.com/yunhaoyang234/RSE-RL/blob/main/figures/struct.png)
+
 ## Requirements:
 See requirement.txt\
 Run
@@ -41,4 +45,17 @@ $ python3 experiment_sidd_denoise.py \
 ```
 The denoisng quality of the SIDD Benchmark images evaluated by PSNR, SSIM, and UQI will be printed out, and the trained model will be saved to the `pretrained model` folder. The PSNR for the self-enhancing reinforcement learning will be printed out.
 
+## Visualizations:
+#### CelebA Denoising Results
+Synthesized Noisy Images:
+![noisy](https://github.com/yunhaoyang234/RSE-RL/blob/main/figures/noise_i.png)
+RSE-RL Denoising Results:
+![denoise](https://github.com/yunhaoyang234/RSE-RL/blob/main/figures/denoise.png)
+
+#### SIDD Denoising Results
+![sidd1](https://github.com/yunhaoyang234/RSE-RL/blob/main/figures/sidd2.png)
+![sidd2](https://github.com/yunhaoyang234/RSE-RL/blob/main/figures/sidd3.png)
+
+#### Reinforcement Learning Recursive Enhancing Results
+![recursive](https://github.com/yunhaoyang234/RSE-RL/blob/main/figures/recursive_dif.png)
 
