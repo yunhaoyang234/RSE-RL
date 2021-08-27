@@ -11,8 +11,8 @@ import tensorflow as tf
 import cv2
 import os
 import glob
-from keras.layers import Input, Dense, Lambda
-from keras.models import Sequential
+from tensorflow.keras.layers import Input, Dense, Lambda
+from tensorflow.keras.models import Sequential
 
 regularizer = keras.regularizers.l1_l2(0.01)
 
