@@ -15,6 +15,7 @@ import torch
 import torchvision
 import imageio
 from keras.layers import Input, Dense, Lambda
+from model import VAE
 
 cwd = ''
 
