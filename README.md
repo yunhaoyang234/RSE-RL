@@ -29,6 +29,7 @@ $ python3 experiment_celeba.py \
     	    --test_files_path "celeba_test(REPLACE THIS WITH YOUR OWN FILE DIRECTORY)/"
 ```
 The reconstruction quality of test data evaluated by PSNR, SSIM, and UQI will be printed out, and the trained model will be saved to the `pretrained model` folder. The PSNR for the self-enhancing reinforcement learning will be printed out.
+
 Note: train_files_path and test_files_path should be the directory (folder) that contains all the tfrecord files.
 
 #### SIDD Denoising Experiment
