@@ -17,7 +17,7 @@ parser.add_argument('--target_psnr', type=float, default=30.0)
 parser.add_argument('--batch_size', type=int, default=32)
 parser.add_argument('--plot', type=bool, default=False)
 
-from model import *
+from models import *
 from evaluation import *
 from RL import *
 
@@ -134,7 +134,6 @@ def main(args):
     '''
     Self-Enhancing
     '''
-    
     TARGET_PSNR = args.target_psnr
 
     for fb in range(0, len(test_files), FILE_BATCH):
