@@ -14,10 +14,12 @@ parser.add_argument('--epoch', type=int, default=50)
 parser.add_argument('--train_files_path', type=str, default='')
 parser.add_argument('--test_files_path', type=str, default='')
 parser.add_argument('--target_psnr', type=float, default=30.0)
+parser.add_argument('--batch_size', type=int, default=32)
 parser.add_argument('--plot', type=bool, default=False)
 
 from models import *
 from evaluation import *
+from RL import *
 
 def main(args):
     # Enable GPU
@@ -39,12 +41,12 @@ def main(args):
     LATENT_DIM = args.latent_dim
     EPOCH = args.epoch
     FILE_BATCH = args.file_batch
+    BATCH_SIZE = args.batch_size
 
     '''
     Load Images
     '''
-    train_files = sorted(glob.glob(cwd + args.train_files_path + '*'))
-    
+    train_files = sorted(glob.glob(args.train_files_path + '*.tfrecords'))
     '''
     Build Networks
     '''
@@ -77,6 +79,8 @@ def main(args):
         train_model(model_y, clear_ys, noise_ys, EPOCH) 
         train_model(model_u, clear_us, noise_us, EPOCH)
         train_model(model_v, clear_vs, noise_vs, EPOCH)
+        
+        print("Train: {}".format(fb))
 
     if PRETRAIN == 0:
         save_models(model_y, 'pretrained models/celeba_y/')
@@ -86,10 +90,11 @@ def main(args):
     '''
     Evaluation
     '''
-    test_files = sorted(glob.glob(cwd + args.test_files_path + '*'))
+    test_files = sorted(glob.glob(args.test_files_path + '*.tfrecords'))
+    print(test_files)
     avg_psnr, avg_ssim, avg_uqi = 0, 0, 0
 
-    for fb in range(0, len(test_files), FILE_BATCH):
+    for fb in range(0, len(test_files),     ):
         test = test_files[fb:fb+FILE_BATCH]
         clear_images = [load_celeb_images(test[i]) for i in range(FILE_BATCH)]
         clear_images = np.concatenate(clear_images, axis=0)
@@ -129,7 +134,6 @@ def main(args):
     '''
     Self-Enhancing
     '''
-    from sac_environment import *
     TARGET_PSNR = args.target_psnr
 
     for fb in range(0, len(test_files), FILE_BATCH):

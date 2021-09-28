@@ -18,6 +18,8 @@ parser.add_argument('--plot', type=bool, default=False)
 
 from models import *
 from evaluation import *
+from RL import *
+    
 
 def main(args):
     # Enable GPU
@@ -135,7 +137,6 @@ def main(args):
     '''
     Self-Enhancing
     '''
-    from sac_environment import *
     TARGET_PSNR = args.target_psnr
 
     for fb in range(0, len(train_files), FILE_BATCH):

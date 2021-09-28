@@ -3,6 +3,7 @@ from gym import spaces
 from stable_baselines3 import A2C
 from stable_baselines3 import SAC
 from stable_baselines3.common.vec_env.dummy_vec_env import DummyVecEnv
+import numpy as np
 
 class Img_Enhancing_Env(gym.Env):
     metadata = {'render.modes': ['human']}
