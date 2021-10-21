@@ -1,6 +1,7 @@
 # Recursive Self-Enhancing Reinforcement Learning (RSE-RL)
 
-[project page](https://cvcweb.oden.utexas.edu/cvcwp/projects/cameraisp/) [arxiv (PS-VAE)](https://arxiv.org/pdf/2104.00253.pdf)
+[[project page]](https://cvcweb.oden.utexas.edu/cvcwp/projects/cameraisp/) 
+[[arxiv (PS-VAE)]](https://arxiv.org/pdf/2104.00253.pdf)
 
 Code for reproducing results in **Recursive Self-Improvement for Camera Image and Signal Processing**.
 
