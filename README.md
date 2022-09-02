@@ -1,7 +1,6 @@
 # Recursive Self-Enhancing Reinforcement Learning (RSE-RL)
 
 [[project page]](https://cvcweb.oden.utexas.edu/cvcwp/projects/cameraisp/) 
-[[arxiv (PS-VAE)]](https://arxiv.org/pdf/2104.00253.pdf)
 
 Code for reproducing results in **Recursive Self-Improvement for Camera Image and Signal Processing**.
 
@@ -70,15 +69,5 @@ RSE-RL Denoising Results:
 This project is a collective result of Yunhao Yang, Yuhan Zheng, Yi Wang, and Dr. Chandrajit Bajaj
 
 ## Cite us
-
-PS-VAE
-```bibtex
-@article{yang2021learning,
-  title={Learning Deep Latent Subspaces for Image Denoising},
-  author={Yang, Yunhao and Zheng, Yuhan and Wang, Yi and Bajaj, Chandrajit},
-  journal={arXiv preprint arXiv:2104.00253},
-  year={2021}
-}
-```
 
 RSE-RL (TBD)
