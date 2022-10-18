@@ -1,6 +1,6 @@
 # Recursive Self-Enhancing Reinforcement Learning (RSE-RL)
 
-[[paper]](TBD) 
+[[paper]](https://www.semanticscholar.org/paper/Reinforcement-Learning-of-Self-Enhancing-Camera-and-Bajaj-Wang/5755a54efe2b4744b62d050bd6569e1b401bc710) 
 
 Code for reproducing results in **Reinforcement Learning of Self Enhancing Camera Image and Signal Processing**.
 
@@ -21,7 +21,7 @@ GPU is required
 Please put the decompressed datasets in the same directory with the code during experiments, otherwise please set **cwd** in utils.py to the file directory where the datasets locate at.
 
 ## Experiments:
-#### An small scale experiment example can be found in the [notebook](https://github.com/yunhaoyang234/RSE-RL/RSE_RL.ipynb)
+#### An small scale experiment example can be found in the [notebook](https://github.com/yunhaoyang234/RSE-RL/blob/main/RSE_RL.ipynb)
 
 #### CelebA Denoising Experiment
 ```bash
