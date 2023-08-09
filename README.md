@@ -73,9 +73,16 @@ This project is a collective result of Yunhao Yang, Yuhan Zheng, Yi Wang, and Dr
 ## Cite us
 
 ```bash
-@inproceedings{Bajaj2021ReinforcementLO,
-  title={Reinforcement Learning of Self Enhancing Camera Image and Signal Processing},
-  author={Chandrajit Bajaj and Yi Wang and Yunhao Yang},
-  year={2022}
+@InProceedings{RSE-RL,
+  author="Bajaj, Chandrajit
+  and Yang, Yunhao
+  and Wang, Yi",
+  title="Reinforcement Learning of Self-enhancing Camera Image and Signal Processing",
+  booktitle="Advances in Data-driven Computing and Intelligent Systems",
+  year="2023",
+  publisher="Springer Nature Singapore",
+  address="Singapore",
+  pages="281--303",
+  isbn="978-981-99-0981-0"
 }
 ```
